@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admissions - Deogiri College</title>
+    <link rel="stylesheet" href="/css/addmition.css" />
+    <style>
+      :root {
+        --bg: #f6f8fb;
+        --card: #d6116a;
+        --accent: #ffd700;
+        --muted: #000000;
+        --glass: rgba(18, 205, 80, 0.7);
+        --radius: 12px;
+        --max-width: 1200px;
+        --shadow: 0 8px 30px rgba(2, 6, 23, 0.06);
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+          sans-serif;
+        color-scheme: light;
+      }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+          sans-serif;
+        background: linear-gradient(180deg, #1446ac, #5e028c);
+        color: #222;
+      }
+
+      .container {
+        width: calc(100% - 32px);
+        max-width: var(--max-width);
+        margin: 0 auto;
+      }
+
+      /* ================= NAVBAR ================= */
+      header.site-header {
+        background: var(--card);
+        box-shadow: var(--shadow);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .main-nav a {
+        color: #333;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 6px 10px;
+        border-radius: 6px;
+      }
+
+      .main-nav a:hover {
+        background: rgba(20, 70, 172, 0.1);
+        color: var(--primary);
+      }
+
+      .cta {
+        background: var(--accent);
+        color: #000;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      /* ===== HAMBURGER ===== */
+      .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 26px;
+        cursor: pointer;
+      }
+
+      /* ===== MOBILE MENU ===== */
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        border-top: 1px solid #eee;
+        box-shadow: var(--shadow);
+        padding: 10px 0;
+      }
+
+      .mobile-menu a {
+        padding: 12px 16px;
+        color: #333;
+        text-decoration: none;
+        font-weight: 600;
+        border-bottom: 1px solid #eee;
+      }
+
+      .mobile-menu a:hover {
+        background: rgba(20, 70, 172, 0.05);
+      }
+
+      .mobile-menu.active {
+        display: flex;
+        animation: slideDown 0.3s ease forwards;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ================= HERO ================= */
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 360px;
+        gap: 24px;
+        align-items: center;
+        padding: 40px 0;
+        color: #fff;
+      }
+
+      .hero h2 {
+        font-size: 32px;
+        margin: 0 0 10px;
+      }
+
+      .hero p {
+        color: #eee;
+        margin-bottom: 16px;
+      }
+
+      .hero button {
+        background: var(--accent);
+        color: #000;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      /* ================= RESPONSIVE ================= */
+      @media (max-width: 768px) {
+        .main-nav a,
+        .cta {
+          display: none;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .hero h2 {
+          font-size: 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container topbar">
+        <div class="brand">
+          <img src="/images/logo.jpg" alt="Deogiri College Logo" />
+          <div>
+            <h1 style="margin: 0; font-size: 16px">Deogiri College</h1>
+            <div style="font-size: 13px; color: #666">
+              Since 1960 • NAAC Accredited
+            </div>
+          </div>
+        </div>
+        <nav class="main-nav">
+          <a href="INDEX.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="department.html">Departments</a>
+          <a href="notice.html">Notices</a>
+          <a href="gallery.html">Gallery</a>
+          <button class="cta"><a href="addmision.html">Admissions</a></button>
+          <button class="hamburger" id="hamburger">☰</button>
+        </nav>
+      </div>
+
+      <div id="mobileMenu" class="mobile-menu">
+        <a href="INDEX.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="department.html">Departments</a>
+        <a href="notice.html">Notices</a>
+        <a href="gallery.html">Gallery</a>
+        <button class="cta"><a href="addmision.html">Admissions</a></button>
+      </div>
+    </header>
+
+    <div class="container">
+      <h2>Admission Process</h2>
+      <div class="steps">
+        <div class="step">Step 1: Fill the online application form.</div>
+        <div class="step">Step 2: Upload required documents.</div>
+        <div class="step">Step 3: Pay the admission fee online.</div>
+        <div class="step">Step 4: Appear for counseling/verification.</div>
+        <div class="step">Step 5: Confirm your admission and get ID card.</div>
+      </div>
+
+      <h2>Apply Now</h2>
+      <form>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+
+        <label for="course">Select Course</label>
+        <select id="course" required>
+          <option value="">--Select--</option>
+          <option>B.Sc</option>
+          <option>B.Com</option>
+          <option>B.A</option>
+          <option>BCA</option>
+          <option>M.Sc</option>
+        </select>
+
+        <button type="submit">Submit Application</button>
+      </form>
+
+      <div class="faq">
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+          <strong>Q: What documents are required?</strong>
+          <p>A: Marksheet, Transfer Certificate, ID Proof, and Photos.</p>
+        </div>
+        <div class="faq-item">
+          <strong>Q: Can I apply for multiple courses?</strong>
+          <p>A: Yes, you can apply for multiple courses separately.</p>
+        </div>
+        <div class="faq-item">
+          <strong>Q: Is there a reservation system?</strong>
+          <p>A: Yes, admissions follow government reservation rules.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Deogiri College. All rights reserved.</p>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        hamburger.addEventListener("click", () => {
+          const open = mobileMenu.classList.toggle("active");
+          hamburger.textContent = open ? "✕" : "☰";
+          hamburger.setAttribute("aria-expanded", open);
+        });
+
+        // Auto close menu on link click
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("active");
+            hamburger.textContent = "☰";
+            hamburger.setAttribute("aria-expanded", false);
+          });
+        });
+
+        // Close if resizing back to desktop
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 768) {
+            mobileMenu.classList.remove("active");
+            hamburger.textContent = "☰";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
