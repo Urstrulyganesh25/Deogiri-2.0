@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/about.css" />
+    <title>Deogiri College - About</title>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="site-header">
+      <div class="container topbar">
+        <div class="brand">
+          <img src="/images/logo.jpg" alt="Deogiri College Logo" />
+          <div>
+            <h1 style="margin: 0; font-size: 16px">Deogiri College</h1>
+            <div style="font-size: 13px; color: #666">
+              Since 1960 • NAAC Accredited
+            </div>
+          </div>
+        </div>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="department.html">Departments</a>
+          <a href="notice.html">Notices</a>
+          <a href="gallery.html">Gallery</a>
+          <button class="cta"><a href="addmision.html">Admissions</a></button>
+          <button class="hamburger" id="hamburger">☰</button>
+        </nav>
+      </div>
+
+      <div id="mobileMenu" class="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="department.html">Departments</a>
+        <a href="notice.html">Notices</a>
+        <a href="gallery.html">Gallery</a>
+        <button class="cta"><a href="addmision.html">Admissions</a></button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>About Deogiri College</h1>
+      <p>
+        Discover our journey, mission, vision, and the leadership that shapes
+        the future of education.
+      </p>
+    </section>
+
+    <!-- HISTORY -->
+    <section class="section history">
+      <h2>Our History</h2>
+      <p>
+        Founded in 1960, Deogiri College has been a pillar of academic
+        excellence in Arts, Science, and Commerce. With decades of legacy, our
+        institution continues to evolve, embracing modern technology while
+        preserving core educational values.
+      </p>
+    </section>
+
+    <!-- VISION & MISSION -->
+    <section class="section">
+      <h2>Vision & Mission</h2>
+      <div class="vision-mission">
+        <div class="card">
+          <h3>Our Vision</h3>
+          <p>
+            To be a leading educational institution that empowers students with
+            knowledge, skills, and values to contribute meaningfully to society.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Our Mission</h3>
+          <p>
+            To provide quality education, foster innovation, encourage research,
+            and nurture holistic development of students across all disciplines.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCIPAL MESSAGE -->
+    <section class="section principal">
+      <img src="images/principle.jpeg" alt="Principal" />
+      <div class="principal-text">
+        <h2>Principal's Message</h2>
+        <p>
+          "At Deogiri College, we believe in shaping not just careers, but
+          lives. Our focus on holistic education ensures that students are
+          prepared for academic, professional, and personal success."
+        </p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; 2025 Deogiri College | All Rights Reserved</p>
+    </footer>
+
+    <script src="/js/about.js">
+            const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      hamburger.addEventListener("click", () => {
+        const open = mobileMenu.classList.toggle("active");
+        hamburger.textContent = open ? "✕" : "☰";
+        hamburger.setAttribute("aria-expanded", open);
+      });
+
+      // Auto close menu on link click
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("active");
+          hamburger.textContent = "☰";
+          hamburger.setAttribute("aria-expanded", false);
+        });
+      });
+
+      // Close if resizing back to desktop
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+          mobileMenu.classList.remove("active");
+          hamburger.textContent = "☰";
+        }
+      });
+    </script>
+  </body>
+</html>
